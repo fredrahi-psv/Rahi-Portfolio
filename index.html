@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <header>
+        Fred Rahi - Digital Porfolio
+    </header>
+
+    <main>
+        <div class="image-gallery">
+            <div class="image-item">
+                <img src="design/posterfinalsquare.jpg" alt="Project Image 2" onclick="openModal('design/posterfinalsquare.jpg')">
+                <span class="image-date">10/24</span>
+            </div>
+            <div class="image-item">
+                <img src="design/posterfinal.jpg" alt="Project Image 2" onclick="openModal('design/posterfinal.jpg')">
+                <span class="image-date">10/24</span>
+            </div>
+            <div class="image-item">
+                <img src="design/brasil5.jpg" alt="Project Image 2" onclick="openModal('design/brasil5.jpg')">
+                <span class="image-date">10/24</span>
+            </div>
+            <div class="image-item">
+                <img src="design/diveconcept1.jpg" alt="Project Image 2" onclick="openModal('design/diveconcept1.jpg')">
+                <span class="image-date">07/24</span>
+            </div>
+            <div class="image-item">
+                <img src="design/sharkweekfinal.jpg" alt="Project Image 2" onclick="openModal('design/sharkweekfinal.jpg')">
+                <span class="image-date">07/24</span>
+            </div>
+            <div class="image-item">
+                <img src="design/sharkweekgrain1.jpg" alt="Project Image 2" onclick="openModal('design/sharkweekgrain1.jpg')">
+                <span class="image-date">03/24</span>
+            </div>
+            <div class="image-item">
+                <img src="design/sharkweekgrain2.jpg" alt="Project Image 2" onclick="openModal('design/sharkweekgrain2.jpg')">
+                <span class="image-date">03/24</span>
+            </div>
+            <div class="image-item">
+                <img src="design/testing.jpg" alt="Project Image 2" onclick="openModal('design/testing.jpg')">
+                <span class="image-date">02/24</span>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+        <p>Projects:</p>
+        <div class="project-list">
+            <div class="project-row">
+                <a href="divepage.html" class="project-name">DIVE! A SEA OPERA</a>
+                <span class="project-type">Videography + Art</span>
+                <span class="project-year">2024</span>
+
+                <a href="cityhub.html" class="project-name">CityHub</a>
+                <span class="project-type">Writing</span>
+                <span class="project-year">2024</span>
+
+                <a href="cquest.html" class="project-name">Corrigan's Quest</a>
+                <span class="project-type">Web Game</span>
+                <span class="project-year">2024</span>
+
+                <a href="empty.html" class="project-name"> </a>
+                <span class="project-type"> </span>
+                <span class="project-year"> </span>
+
+                <a href="about.html" class="project-name">About</a>
+                <a href="music.html" class="project-name">Music</a>
+                <span class="project-year"> </span>
+                
+            </div>
+        </div>
+    </aside>
+
+    <div id="image-modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById("modal-image").src = src;
+            document.getElementById("image-modal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("image-modal").style.display = "none";
+        }
+    </script>
+
+</div>
+
+</body>
+</html>
