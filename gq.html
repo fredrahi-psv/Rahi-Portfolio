@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CityHub Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <main>
+        <div class="project-content">
+            <h1>GQ Internship</h1>
+            <p>I interned at GQ's Sydney office in late 2019 up until early 2020 as a fashion assistant. I mostly did admin and research but I assisted on a few shoots for GQ and also Vogue, who shared office space with GQ. Getting to see the process behind the scenes and being present for some beautiful location shoots really reaffirmed my desire to work in a creative field. It was a very fun experience to have straight out of high school.</p>
+        </div>
+    </main>
+    <aside>
+        <p>Projects:</p>
+        <div class="project-list">
+            <div class="project-row">
+                <a href="divepage.html" class="project-name">DIVE! A SEA OPERA</a>
+                <span class="project-type">Videography + Art</span>
+                <span class="project-year">2024</span>
+
+                <a href="cityhub.html" class="project-name">CityHub</a>
+                <span class="project-type">Writing</span>
+                <span class="project-year">2024</span>
+
+                <a href="cquest.html" class="project-name">Corrigan's Quest</a>
+                <span class="project-type">Web Game</span>
+                <span class="project-year">2024</span>
+
+                <a href="gq.html" class="project-name">GQ Internship</a>
+                <span class="project-type">Fashion Assistant</span>
+                <span class="project-year">2020</span>
+
+                <a href="empty.html" class="project-name"> </a>
+                <span class="project-type"> </span>
+                <span class="project-year"> </span>
+
+                <a href="about.html" class="project-name">About</a>
+                <a href="music.html" class="project-name">Music</a>
+                <span class="project-year"> </span>
+                
+            </div>
+        </div>
+    </aside>
+
+    <script>  
+        document.querySelector(".main-photo-img").onclick = function() {
+        document.getElementById("photo-modal").style.display = "flex";
+        document.getElementById("modal-image").src = this.src;
+            };
+
+    function closeModal() {
+        document.getElementById("photo-modal").style.display = "none";
+}
+    </script>
+
+
+
+    <a href="index.html" class="home-button">Home</a>
+    <a href="gqreference.pdf" target="_blank" class="gqref-button">Reference Letter</a>
+</body>
+</html>
