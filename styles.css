@@ -163,6 +163,32 @@ header {
     text-decoration: underline;
 }
 
+.resume-button {
+    position: fixed;
+    bottom: 30px;
+    left: 60px;
+    color: #000;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: Stara-Medium;
+    text-decoration: underline;
+}
+
+.gqref-button {
+    position: fixed;
+    top: 350px;
+    left: 65px;
+    color: #000;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: Stara-Medium;
+    text-decoration: underline;
+}
+
 .small-image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
