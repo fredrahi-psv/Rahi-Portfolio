@@ -134,7 +134,16 @@
                     body.style.cursor = "url('pointer/pointer-hover.png'), auto";
                 });
             });
+
+            body.addEventListener('mousedown', () => {
+                body.style.cursor = "url('pointer/pointer-click.png'), auto";
+            });
+
+            body.addEventListener('mouseup', () => {
+                body.style.cursor = "url('pointer/pointer.png'), auto";
+            });
         });
     </script>
+    
 </body>
 </html>
