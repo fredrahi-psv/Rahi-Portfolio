@@ -4,25 +4,26 @@ body {
     grid-template-columns: 70% 30%;
     height: 100vh;
     font-family: Stara-Medium;
+    cursor: url('pointer/pointer.png'), auto;
 }
 
 main {
     background-color: #fff;
     overflow-y: scroll;
-    padding-top: 60px; 
+    padding-top: 60px;
 }
 
 .image-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
-    gap: 75px; 
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 75px;
     padding: 80px;
 }
 
 .image-item {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
+    align-items: flex-start;
     text-align: left;
 }
 
@@ -31,14 +32,27 @@ main {
     height: auto;
     border: 1px solid #ddd;
     border-radius: 5px;
-    cursor: pointer; 
+    cursor: pointer;
+}
+
+.image-item video {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-item video:hover {
+    filter: brightness(1.2);
+    outline: 2px solid #fff200;
 }
 
 .image-date {
-    margin-top: 5px; 
+    margin-top: 5px;
     font-size: 12px;
     color: #666;
-    width: 100%; 
+    width: 100%;
 }
 
 .modal {
@@ -49,7 +63,7 @@ main {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
 }
@@ -59,6 +73,11 @@ main {
     max-height: 80%;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content#modal-video {
+    width: auto;
+    height: auto;
 }
 
 .close {
@@ -76,7 +95,7 @@ aside {
     padding: 20px;
     overflow-y: scroll;
     font-size: 12px;
-    padding-top: 60px; 
+    padding-top: 60px;
     font-family: Stara-Medium;
 }
 
@@ -87,18 +106,18 @@ aside::-webkit-scrollbar {
 
 main,
 aside {
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .project-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1px;
 }
 
 .project-row {
-    display: contents; 
+    display: contents;
 }
 
 .project-name, .project-type, .project-year {
@@ -113,7 +132,7 @@ aside {
 }
 
 .project-name:visited {
-    color: inherit; 
+    color: inherit;
 }
 
 header {
@@ -150,43 +169,31 @@ header {
     margin-bottom: 0px;
 }
 
-.home-button {
+.home-button,
+.resume-button,
+.gqref-button {
     position: fixed;
-    bottom: 30px;
-    left: 10px;
     color: #000;
     padding: 10px 15px;
-    text-decoration: none;
+    text-decoration: underline;
     font-size: 14px;
     border-radius: 5px;
     font-family: Stara-Medium;
-    text-decoration: underline;
+}
+
+.home-button {
+    bottom: 30px;
+    left: 10px;
 }
 
 .resume-button {
-    position: fixed;
     bottom: 30px;
     left: 60px;
-    color: #000;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 14px;
-    border-radius: 5px;
-    font-family: Stara-Medium;
-    text-decoration: underline;
 }
 
 .gqref-button {
-    position: fixed;
     top: 350px;
     left: 65px;
-    color: #000;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 14px;
-    border-radius: 5px;
-    font-family: Stara-Medium;
-    text-decoration: underline;
 }
 
 .small-image-gallery {
@@ -213,39 +220,54 @@ header {
     color: #333;
 }
 
+.link-container h1 {
+    font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
 .link-container h2 {
     font-size: 16px;
     margin-bottom: 0px;
+}
+
+.link-list {
+    list-style: none;
+}
+
+.link-list li {
+    margin-bottom: 10px;
+}
+
+.link-list a {
+    color: #000;
+    text-decoration: none;
 }
 
 .link-list a:hover {
     color: #fff200;
 }
 
-.link-container h1 {
-    font-size: 16px;
-    margin-bottom: 25px;
-    margin-top: 40px; /* Increased margin-top for more space */
-}
-
-.link-list {
-    list-style: none; /* Removes dots from the list items */
-}
-
-.link-list a {
-    color: #000;
-    text-decoration: none; /* Ensures links have no underline */
-}
-
-.link-list li {
-    margin-bottom: 10px; /* Adds space between each link */
-}
-
 .highlight-box {
     display: inline-block;
-    width: 120px;  /* Adjust width as needed */
-    height: 20px; /* Adjust height as needed */
-    background-color: #fff200; /* Yellow color */
-    margin-left: 10px; /* Spacing between the box and the heading */
-    vertical-align: middle; /* Aligns the box with the heading */
+    width: 120px;
+    height: 20px;
+    background-color: #fff200;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+button, a {
+    cursor: url('pointer/pointer-click.png'), pointer;
+}
+
+button:hover,
+a:hover,
+.hoverable {
+    cursor: url('pointer/pointer-hover.png'), pointer;
+}
+
+.image-gallery img:hover,
+.image-gallery video:hover {
+    cursor: url('pointer/pointer-hover.png'), pointer;
 }
