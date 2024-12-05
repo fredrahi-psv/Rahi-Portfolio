@@ -4,47 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Your Website</title>
+    <title>Fred Rahi - Digital Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <header>
-        Fred Rahi - Digital Porfolio
+        Fred Rahi - Digital Portfolio
     </header>
 
     <main>
         <div class="image-gallery">
             <div class="image-item">
-                <img src="design/posterfinalsquare.jpg" alt="Project Image 2" onclick="openModal('design/posterfinalsquare.jpg')">
+                <img src="design/posterfinalsquare.jpg" alt="Poster Final Square" onclick="openModal('design/posterfinalsquare.jpg')">
                 <span class="image-date">10/24</span>
             </div>
             <div class="image-item">
-                <img src="design/posterfinal.jpg" alt="Project Image 2" onclick="openModal('design/posterfinal.jpg')">
+                <img src="design/posterfinal.jpg" alt="Poster Final" onclick="openModal('design/posterfinal.jpg')">
                 <span class="image-date">10/24</span>
             </div>
             <div class="image-item">
-                <img src="design/brasil5.jpg" alt="Project Image 2" onclick="openModal('design/brasil5.jpg')">
+                <img src="design/brasil5.jpg" alt="Brasil Design" onclick="openModal('design/brasil5.jpg')">
                 <span class="image-date">10/24</span>
             </div>
             <div class="image-item">
-                <img src="design/diveconcept1.jpg" alt="Project Image 2" onclick="openModal('design/diveconcept1.jpg')">
+                <img src="design/diveconcept1.jpg" alt="Dive Concept 1" onclick="openModal('design/diveconcept1.jpg')">
                 <span class="image-date">07/24</span>
             </div>
             <div class="image-item">
-                <img src="design/sharkweekfinal.jpg" alt="Project Image 2" onclick="openModal('design/sharkweekfinal.jpg')">
+                <img src="design/sharkweekfinal.jpg" alt="Shark Week Final" onclick="openModal('design/sharkweekfinal.jpg')">
                 <span class="image-date">07/24</span>
             </div>
             <div class="image-item">
-                <img src="design/sharkweekgrain1.jpg" alt="Project Image 2" onclick="openModal('design/sharkweekgrain1.jpg')">
+                <img src="design/sharkweekgrain1.jpg" alt="Shark Week Grain 1" onclick="openModal('design/sharkweekgrain1.jpg')">
                 <span class="image-date">03/24</span>
             </div>
             <div class="image-item">
-                <img src="design/sharkweekgrain2.jpg" alt="Project Image 2" onclick="openModal('design/sharkweekgrain2.jpg')">
+                <img src="design/sharkweekgrain2.jpg" alt="Shark Week Grain 2" onclick="openModal('design/sharkweekgrain2.jpg')">
                 <span class="image-date">03/24</span>
             </div>
             <div class="image-item">
-                <img src="design/testing.jpg" alt="Project Image 2" onclick="openModal('design/testing.jpg')">
+                <img src="design/testing.jpg" alt="Testing Design" onclick="openModal('design/testing.jpg')">
                 <span class="image-date">02/24</span>
             </div>
         </div>
@@ -70,14 +70,8 @@
                 <span class="project-type">Fashion Assistant</span>
                 <span class="project-year">2020</span>
 
-                <a href="empty.html" class="project-name"> </a>
-                <span class="project-type"> </span>
-                <span class="project-year"> </span>
-
                 <a href="about.html" class="project-name">About</a>
                 <a href="music.html" class="project-name">Music</a>
-                <span class="project-year"> </span>
-                
             </div>
         </div>
     </aside>
@@ -96,9 +90,36 @@
         function closeModal() {
             document.getElementById("image-modal").style.display = "none";
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.querySelector('body');
+
+            document.querySelectorAll('.image-gallery img').forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    body.style.cursor = "url('pointer/pointer-hover.png'), auto";
+                });
+
+                element.addEventListener('mouseleave', () => {
+                    body.style.cursor = "url('pointer/pointer.png'), auto";
+                });
+
+                element.addEventListener('mousedown', () => {
+                    body.style.cursor = "url('pointer/pointer-click.png'), auto";
+                });
+
+                element.addEventListener('mouseup', () => {
+                    body.style.cursor = "url('pointer/pointer-hover.png'), auto";
+                });
+            });
+
+            body.addEventListener('mousedown', () => {
+                body.style.cursor = "url('pointer/pointer-click.png'), auto";
+            });
+
+            body.addEventListener('mouseup', () => {
+                body.style.cursor = "url('pointer/pointer.png'), auto";
+            });
+        });
     </script>
-
-</div>
-
 </body>
 </html>
