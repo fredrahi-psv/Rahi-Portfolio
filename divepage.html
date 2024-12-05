@@ -4,19 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CityHub Project</title>
+    <title>DIVE! A SEA OPERA</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <main>
         <div class="project-content">
-            <h1>'DIVE! A SEA OPERA' - Videography, album art, and art direction/conceptulisation</h1>
-            <p>'DIVE! A SEA OPERA' is an EP that I made with talented musician/producer (and very close friend) DiLL. The EP features oceanic inspiration throughout it's production and lyrical content, and draws heavily from my personal relationship with the ocean.</p>
+            <h1>'DIVE! A SEA OPERA' - Videography, Album Art, and Art Direction/Conceptualization</h1>
+            <p>'DIVE! A SEA OPERA' is an EP that I made with talented musician/producer (and close friend) DiLL. The EP features oceanic inspiration throughout its production and lyrical content, and draws heavily from my personal relationship with the ocean.</p>
             <p>I leaned into my past a lot on this EP, and the settings for the videography are locations where I spent a lot of time in my childhood. The 'DIVE!' shortform video, for example, was filmed in The Entrance, NSW, a place my family and I stayed multiple times a year up until my late teens.</p>
             <p>I filmed everything on a SONY CCD TRV58 Hi8 Camcorder, and the photos were taken on a Canon KODAK PIXPRO AZ528 and a SONY DSC-H90.</p>
         </div>
+
+        <div class="image-gallery">
+            <div class="image-item">
+                <video src="videos/divepromo.mp4" muted loop onclick="openModal('videos/divepromo.mp4')"></video>
+                <span class="image-date">11/24</span>
+            </div>
+            <div class="image-item">
+                <img src="design/diveart.jpeg" alt="Dive Art" onclick="openModal('design/diveart.jpeg')">
+                <span class="image-date">11/24</span>
+            </div>
+        </div>
+
+        <div id="image-modal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modal-image">
+        </div>
+
+        <div id="video-modal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <video class="modal-content" id="modal-video" controls></video>
+        </div>
     </main>
+
     <aside>
         <p>Projects:</p>
         <div class="project-list">
@@ -37,17 +59,83 @@
                 <span class="project-type">Fashion Assistant</span>
                 <span class="project-year">2020</span>
 
-                <a href="empty.html" class="project-name"> </a>
-                <span class="project-type"> </span>
-                <span class="project-year"> </span>
-
                 <a href="about.html" class="project-name">About</a>
                 <a href="music.html" class="project-name">Music</a>
-                <span class="project-year"> </span>
-                
             </div>
         </div>
     </aside>
+
+    <script>
+        function openModal(src) {
+            const isVideo = src.endsWith('.mp4');
+            const modal = isVideo ? document.getElementById('video-modal') : document.getElementById('image-modal');
+            const modalContent = isVideo ? document.getElementById('modal-video') : document.getElementById('modal-image');
+
+            modalContent.src = src;
+            modal.style.display = 'flex';
+
+            if (isVideo) modalContent.play();
+        }
+
+        function closeModal() {
+            const videoModal = document.getElementById('video-modal');
+            const imageModal = document.getElementById('image-modal');
+            const video = document.getElementById('modal-video');
+            const image = document.getElementById('modal-image');
+
+            videoModal.style.display = 'none';
+            imageModal.style.display = 'none';
+
+            if (video) {
+                video.pause();
+                video.src = '';
+            }
+
+            if (image) {
+                image.src = '';
+            }
+        }
+
+        document.querySelectorAll('.image-item video').forEach(video => {
+            video.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            video.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.querySelector('body');
+
+            document.querySelectorAll('.image-gallery img, .image-gallery video').forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    body.style.cursor = "url('pointer/pointer-hover.png'), auto";
+                });
+
+                element.addEventListener('mouseleave', () => {
+                    body.style.cursor = "url('pointer/pointer.png'), auto";
+                });
+
+                element.addEventListener('mousedown', () => {
+                    body.style.cursor = "url('pointer/pointer-click.png'), auto";
+                });
+
+                element.addEventListener('mouseup', () => {
+                    body.style.cursor = "url('pointer/pointer-hover.png'), auto";
+                });
+            });
+
+            body.addEventListener('mousedown', () => {
+                body.style.cursor = "url('pointer/pointer-click.png'), auto";
+            });
+
+            body.addEventListener('mouseup', () => {
+                body.style.cursor = "url('pointer/pointer.png'), auto";
+            });
+        });
+    </script>
 
     <a href="index.html" class="home-button">Home</a>
 </body>
