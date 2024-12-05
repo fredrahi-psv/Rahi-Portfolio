@@ -17,6 +17,7 @@
             <p>Thank you! :)</p>
         </div>
     </main>
+
     <aside>
         <p>Projects:</p>
         <div class="project-list">
@@ -37,17 +38,57 @@
                 <span class="project-type">Fashion Assistant</span>
                 <span class="project-year">2020</span>
 
-                <a href="empty.html" class="project-name"> </a>
-                <span class="project-type"> </span>
-                <span class="project-year"> </span>
+                <a href="empty.html" class="project-name"></a>
+                <span class="project-type"></span>
+                <span class="project-year"></span>
 
                 <a href="about.html" class="project-name">About</a>
                 <a href="music.html" class="project-name">Music</a>
-                <span class="project-year"> </span>
-                
+                <span class="project-year"></span>
             </div>
         </div>
     </aside>
+
+    <script>
+        function openModal(src) {
+            document.getElementById("modal-image").src = src;
+            document.getElementById("image-modal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("image-modal").style.display = "none";
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.querySelector('body');
+
+            document.querySelectorAll('.image-gallery img, .image-gallery video').forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    body.style.cursor = "url('pointer/pointer-hover.png'), auto";
+                });
+
+                element.addEventListener('mouseleave', () => {
+                    body.style.cursor = "url('pointer/pointer.png'), auto";
+                });
+
+                element.addEventListener('mousedown', () => {
+                    body.style.cursor = "url('pointer/pointer-click.png'), auto";
+                });
+
+                element.addEventListener('mouseup', () => {
+                    body.style.cursor = "url('pointer/pointer-hover.png'), auto";
+                });
+            });
+
+            body.addEventListener('mousedown', () => {
+                body.style.cursor = "url('pointer/pointer-click.png'), auto";
+            });
+
+            body.addEventListener('mouseup', () => {
+                body.style.cursor = "url('pointer/pointer.png'), auto";
+            });
+        });
+    </script>
 
     <a href="index.html" class="home-button">Home</a>
     <a href="portfolio.pdf" target="_blank" class="resume-button">Resume</a>
